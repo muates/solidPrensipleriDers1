@@ -28,9 +28,13 @@ public class CartServiceImpl implements ICartService {
         Bakiye bakiye = bakiyeService.getBakiye();
 
         if (user == null || product == null || address == null)
-            throw new RuntimeException();
+            throw new IllegalStateException();
 
+        if (bakiye.getBakiye() < product.getPrice())
+            throw new IllegalStateException();
 
-        return null;
+        return "Kullanıcı: " + user.getUsername() + "/n" +
+                "Şu ürünü: " + product.getProductName() + "/n" +
+                "Şu fiyata" + product.getPrice() + "başarılı bir şekilde aldı";
     }
 }

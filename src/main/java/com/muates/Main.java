@@ -1,7 +1,7 @@
 package com.muates;
 
+import com.muates.example1.srp.service.CartServiceImpl;
+import com.muates.example1.srp.service.ICartService;
+
 public class Main {
-    public static void main(String[] args) {
-        System.out.println("Hello world!");
-    }
 }
